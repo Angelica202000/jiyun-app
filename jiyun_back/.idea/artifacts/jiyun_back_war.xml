@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jiyun_back:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>jiyun_back</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="jiyun.war">
+      <element id="artifact" artifact-name="jiyun_back:war exploded" />
+    </root>
+  </artifact>
+</component>

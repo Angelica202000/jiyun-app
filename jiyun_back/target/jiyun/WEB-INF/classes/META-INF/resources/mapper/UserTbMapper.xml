@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fire.back.dao.UserTbMapper">
+  <resultMap id="BaseResultMap" type="com.fire.back.entity.UserTb">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="id_card_number" jdbcType="VARCHAR" property="idCardNumber" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="is_full_info" jdbcType="INTEGER" property="isFullInfo" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, nick_name, open_id, real_name, id_card_number, mobile, gender, is_full_info, 
+    is_delete, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.fire.back.entity.UserTbExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from user_tb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_tb
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_tb
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.fire.back.entity.UserTb">
+    insert into user_tb (id, nick_name, open_id, 
+      real_name, id_card_number, mobile, 
+      gender, is_full_info, is_delete, 
+      create_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, 
+      #{realName,jdbcType=VARCHAR}, #{idCardNumber,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=INTEGER}, #{isFullInfo,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fire.back.entity.UserTb" useGeneratedKeys="true" keyProperty="id">
+    insert into user_tb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="idCardNumber != null">
+        id_card_number,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="isFullInfo != null">
+        is_full_info,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumber != null">
+        #{idCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="isFullInfo != null">
+        #{isFullInfo,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fire.back.entity.UserTbExample" resultType="java.lang.Long">
+    select count(*) from user_tb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user_tb
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.nickName != null">
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openId != null">
+        open_id = #{record.openId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realName != null">
+        real_name = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCardNumber != null">
+        id_card_number = #{record.idCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=INTEGER},
+      </if>
+      <if test="record.isFullInfo != null">
+        is_full_info = #{record.isFullInfo,jdbcType=INTEGER},
+      </if>
+      <if test="record.isDelete != null">
+        is_delete = #{record.isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user_tb
+    set id = #{record.id,jdbcType=BIGINT},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      open_id = #{record.openId,jdbcType=VARCHAR},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      id_card_number = #{record.idCardNumber,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      gender = #{record.gender,jdbcType=INTEGER},
+      is_full_info = #{record.isFullInfo,jdbcType=INTEGER},
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fire.back.entity.UserTb">
+    update user_tb
+    <set>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumber != null">
+        id_card_number = #{idCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="isFullInfo != null">
+        is_full_info = #{isFullInfo,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fire.back.entity.UserTb">
+    update user_tb
+    set nick_name = #{nickName,jdbcType=VARCHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      id_card_number = #{idCardNumber,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=INTEGER},
+      is_full_info = #{isFullInfo,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

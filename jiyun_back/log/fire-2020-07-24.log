@@ -1,0 +1,227 @@
+2020-07-24 12:08:51.613 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 16196 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:08:51.613 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:08:51.733 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-24 12:08:51.733 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-24 12:08:54.489 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3901f38a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.170 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.182 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.188 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.226 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$abee8902] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.235 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:08:55.747 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:08:55.764 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:08:55.774 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:08:55.774 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:08:55.782 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\software\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-07-24 12:08:55.902 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:08:56.200 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:08:58.728 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-07-24 12:08:59.943 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:09:00.123 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:09:00.921 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:09:00.941 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:09:00.981 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:09:01.166 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:09:01.178 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:09:01.273 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:01.309 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:01.309 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:09:01.324 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:09:01.348 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:09:01.370 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:09:01.372 [restartedMain] INFO  com.fire.Application-Started Application in 10.332 seconds (JVM running for 12.18)
+2020-07-24 12:09:26.563 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
+2020-07-24 12:09:27.511 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 16196 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:09:27.511 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:09:27.931 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3901f38a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:27.941 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:27.941 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:27.941 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:27.951 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$abee8902] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:27.961 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:28.154 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:09:28.155 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:09:28.156 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:09:28.156 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:09:28.173 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:09:28.251 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:09:30.492 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} inited
+2020-07-24 12:09:30.912 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:09:30.962 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:09:31.192 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:09:31.193 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:09:31.198 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:09:31.244 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:09:31.252 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:09:31.338 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:31.381 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:31.382 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:09:31.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:09:31.406 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:09:31.410 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:09:31.411 [restartedMain] INFO  com.fire.Application-Started Application in 3.93 seconds (JVM running for 42.219)
+2020-07-24 12:09:31.414 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-07-24 12:09:38.896 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} closed
+2020-07-24 12:09:39.547 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 16196 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:09:39.547 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:09:39.907 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3901f38a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:39.907 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:39.917 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:39.917 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:39.927 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$abee8902] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:39.927 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:09:40.047 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:09:40.057 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:09:40.057 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:09:40.057 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:09:40.148 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:09:40.242 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:09:42.477 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-3} inited
+2020-07-24 12:09:42.847 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:09:42.887 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:09:43.077 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:09:43.077 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:09:43.087 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:09:43.117 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:09:43.127 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:09:43.201 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:43.229 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:09:43.230 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:09:43.239 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:09:43.246 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:09:43.249 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:09:43.250 [restartedMain] INFO  com.fire.Application-Started Application in 3.733 seconds (JVM running for 54.058)
+2020-07-24 12:09:43.252 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-07-24 12:10:13.366 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 9376 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:10:13.370 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:10:13.425 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-24 12:10:13.426 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-24 12:10:14.569 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$78a74cca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.156 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.166 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.176 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.196 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb93e242] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.206 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:10:15.536 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:10:15.546 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:10:15.556 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:10:15.556 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:10:15.556 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\software\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-07-24 12:10:15.626 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:10:15.806 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:10:18.057 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-07-24 12:10:18.777 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:10:18.897 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:10:19.251 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:10:19.263 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:10:19.296 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:10:19.457 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:10:19.467 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:10:19.572 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:10:19.613 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:10:19.614 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:10:19.651 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:10:19.675 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:10:19.697 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:10:19.700 [restartedMain] INFO  com.fire.Application-Started Application in 6.687 seconds (JVM running for 7.965)
+2020-07-24 12:13:21.561 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 12:14:32.207 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 11536 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:14:32.211 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:14:32.263 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-24 12:14:32.263 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-24 12:14:33.550 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$ab140d04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.228 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.238 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.241 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.269 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1e00a27c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.277 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:14:34.657 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:14:34.670 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:14:34.678 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:14:34.679 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:14:34.686 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\software\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-07-24 12:14:34.768 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:14:35.020 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:14:37.320 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-07-24 12:14:38.145 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:14:38.264 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:14:38.672 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:14:38.683 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:14:38.713 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:14:38.842 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:14:38.850 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:14:38.935 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:14:38.968 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:14:38.969 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:14:38.983 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:14:39.002 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:14:39.023 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:14:39.027 [restartedMain] INFO  com.fire.Application-Started Application in 7.265 seconds (JVM running for 8.71)
+2020-07-24 12:14:57.343 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 12:19:41.809 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 6592 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:19:41.819 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:19:41.880 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-24 12:19:41.880 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-24 12:19:43.083 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$99935e14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:43.740 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:43.753 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:43.757 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:43.803 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c7ff38c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:43.816 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:19:44.275 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:19:44.294 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:19:44.305 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:19:44.305 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:19:44.313 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\software\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-07-24 12:19:44.468 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:19:44.638 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:19:46.831 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-07-24 12:19:47.804 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:19:47.937 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:19:48.456 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:19:48.472 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:19:48.518 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:19:48.726 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:19:48.736 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:19:48.853 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:19:48.905 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:19:48.906 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:19:48.922 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:19:48.943 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:19:48.973 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:19:48.973 [restartedMain] INFO  com.fire.Application-Started Application in 7.488 seconds (JVM running for 9.553)
+2020-07-24 12:20:07.982 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 12:26:56.147 [Thread-24] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
+2020-07-24 12:27:01.698 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 14456 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-07-24 12:27:01.701 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-07-24 12:27:01.756 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-24 12:27:01.757 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-24 12:27:03.108 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$71ad2535] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.037 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.051 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.056 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.098 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e499baad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.132 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-24 12:27:04.703 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+2020-07-24 12:27:04.718 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:27:04.731 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-07-24 12:27:04.731 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-07-24 12:27:04.737 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\software\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-07-24 12:27:04.830 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-07-24 12:27:05.068 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-07-24 12:27:07.566 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-07-24 12:27:08.749 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-07-24 12:27:08.874 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-07-24 12:27:09.359 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-07-24 12:27:09.373 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-07-24 12:27:09.414 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-07-24 12:27:09.589 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-07-24 12:27:09.600 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-07-24 12:27:09.700 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:27:09.761 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-24 12:27:09.763 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-07-24 12:27:09.796 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-07-24 12:27:09.834 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+2020-07-24 12:27:09.864 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+2020-07-24 12:27:09.868 [restartedMain] INFO  com.fire.Application-Started Application in 8.674 seconds (JVM running for 10.196)
+2020-07-24 12:27:09.916 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'

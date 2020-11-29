@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="include :: header">
+<style>
+        .layui-form-label {
+            width: 300px !important;
+            text-align: center !important;
+        }
+ 
+        .layui-input-block {
+            margin-left: 300px !important;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form" id="searchForm">
+  <div class="layui-row">
+    <div class="layui-col-md12" style="padding:20px">
+        收件人名称：
+        <div class="layui-inline">
+	        <input type="text" class="layui-input" name="pName" id="pName" placeholder="收件人名称模糊查询">
+        </div>
+        创建时间：
+        <div class="layui-inline">
+          <input type="text" class="layui-input" name="csTime" id="csTime" placeholder="开始日期起始" onfocus="noInput(this)">
+        </div>-
+        <div class="layui-inline">
+          <input type="text" class="layui-input" name="ceTime" id="ceTime" placeholder="开始日期截止" onfocus="noInput(this)">
+        </div>
+        状态：
+        <div class="layui-inline" lay-filter="typeSelect">
+	        <select name="type" id="type" lay-verify="">
+			  <option value="">请选择</option>
+			  <option value="0">待添加</option>
+			  <option value="1">待称重</option>
+			  <option value="2">待付款</option>
+			  <option value="3">已付款</option>
+			  <option value="4">运输中</option>
+			  <option value="5">已完成</option>
+			</select> 
+        </div>
+        <div class="layui-inline" style="float:right;">
+	        <button type="button" class="layui-btn" data-type="reload" id="search" shiro:hasPermission="common:pack:list">搜索</button>
+	        <button type="button" class="layui-btn layui-btn-primary" data-type="reload" id="clear">重置</button>
+	        <button type="button" class="layui-btn" data-type="reload" id="export" shiro:hasPermission="common:pack:list"><i class="layui-icon">&#xe608;</i>导出
+      	</div>
+    </div>
+  </div>
+</form>
+  <table class="layui-hide" id="demoTable" lay-filter="tableFilter"></table>
+  <div id="cpackdiv"  style="display:none">
+  	<table class="layui-hide" id="cpackTable" lay-filter="tableFilter"></table>
+  </div>
+  <form class="layui-form layui-form-pane" id="packInfo" style="display:none">
+  <input type="hidden" id="id" name="id" value="">
+  <div class="layui-form-item" style="padding-top: 10px">
+    <label class="layui-form-label">重量(kg)</label>
+    <div class="layui-input-block">
+      <input maxlength="10" type="number" name="weight" required  lay-verify="required" placeholder="请输入包裹总重量" class="layui-input" id="weight">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">金额(元)</label>
+    <div class="layui-input-block">
+      <input maxlength="10" type="number" name="amount" required lay-verify="required" placeholder="请输入包裹总金额" class="layui-input" id="amount">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">物流公司</label>
+    <div class="layui-input-block">
+      <input maxlength="20" type="text" name="logistics" required lay-verify="required" placeholder="请输入物流公司" class="layui-input" id="logistics">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">物流单号</label>
+    <div class="layui-input-block">
+      <input maxlength="30" type="text" name="logistics_order" required lay-verify="required" placeholder="请输入物流单号" class="layui-input" id="logistics_order">
+    </div>
+  </div>
+</form>
+<form class="layui-form layui-form-pane" id="stateInfo" style="display:none">
+  <input type="hidden" id="stateid" name="id" value="">
+  <div class="layui-form-item" style="padding-top: 10px">
+    <label class="layui-form-label">状态</label>
+    <div class="layui-input-block">
+      <select name="state" id="state" lay-verify="">
+			  <option value="0">待添加</option>
+			  <option value="1">待称重</option>
+			  <option value="2">待付款</option>
+			  <option value="3">已付款</option>
+			  <option value="4">运输中</option>
+			  <option value="5">已完成</option>
+		</select>
+	</div>
+  </div>
+</form>
+<form class="layui-form layui-form-pane" id="typeInfo" style="display:none">
+  <input type="hidden" id="typeid" name="id" value="">
+  <div class="layui-form-item" style="padding-top: 10px">
+    <label class="layui-form-label">类型</label>
+    <div class="layui-input-block">
+      <select name="type2" id="type2" lay-verify="">
+			  <option value="电商空运">电商空运</option>
+			  <option value="EMS空运">EMS空运</option>
+			  <option value="电商海运">电商海运</option>
+			  <option value="EMS海运">EMS海运</option>
+		</select>
+	</div>
+  </div>
+</form>
+  <script type="text/javascript">
+  var tableIns; 
+  layui.use(['layedit','laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element'], function(){
+    var layer = layui.layer //弹层
+        ,table = layui.table //表格
+        ,element = layui.element; //元素操作
+    //执行一个 table 实例
+    tableIns = table.render({
+      elem: '#demoTable'
+      ,url: 'back/pack/getList'
+      ,method: 'post'
+      ,contentType: 'application/json'
+      ,id:'demoTable'
+   	  ,parseData: function(res){ //res 即为原始返回的数据
+   		    return {
+   		      "code": res.status, //解析接口状态
+   		      "msg": res.message, //解析提示文本
+   		   	  "count": res.count, //解析数据长度
+   		      "data": res.data //解析数据列表
+   		    };
+   	  }
+    ,where: {field: 'create_time', sort: "desc"}
+    ,response: {
+        statusCode:1 //规定成功的状态码，默认：0
+      }
+      ,page: true //开启分页
+      ,cols: [
+          [
+        //{type:'checkbox'}
+        //,{title: '序号', type:'numbers', align: 'center'}
+        ,{field: 'id', hide:true, title:'id', align: 'center'}
+        ,{field: 'status', hide:true, title:'status', align: 'center'}
+        ,{width:250,field:'pack_no', title: '包裹单号', align: 'center'}
+        ,{width:120,field:'pack_type', title: '包裹类型', align: 'center'}
+        ,{width:120,field:'uname', title: '用户昵称', align: 'center'}
+        ,{width:120,field:'real_name', title: '收件人名称', align: 'center'}
+        ,{width:160,field:'mobile', title: '收件人手机号', align: 'center'}
+        ,{width:300,field:'position', title: '收件人地址', align: 'center'}
+        ,{width:200,field:'clearance', title: '通关号码', align: 'center'}
+        ,{width:100,field:'status2', title: '状态', align: 'center',templet: function (d) {
+        	if(d.status=='0')
+        		return '待添加';
+        	if(d.status=='1')
+        		return '待称重';
+        	if(d.status=='2')
+        		return '待付款';
+        	if(d.status=='3')
+        		return '已付款';
+        	if(d.status=='4')
+        		return '运输中';
+        	if(d.status=='5')
+        		return '已完成';
+        }}
+        ,{width:100,field:'weight', title: '重量(kg)', align: 'center'}
+        ,{width:100,field:'amount', title: '总金额(元)', align: 'center'}
+        ,{width:150,field:'logistics', title: '物流公司', align: 'center'}
+        ,{width:200,field:'logistics_order', title: '物流单号', align: 'center'}
+        ,{width:100,field:'cpcount', title: '子包裹数', align: 'center',templet: function (d) {
+            return d.cpcount == '0' ? '0' : 
+            	"<a href='#' onclick='openCPack("+d.id+")'><u>查看"+
+            	d.cpcount+"个</u></a>";
+        }}
+        ,{width:200,field:'ctime', title: '创建时间', align: 'center'}
+        ,{ title: '操作',width:300, align:'center', toolbar: '#bar'}
+        ]
+      ]
+    });
+    
+    var laydate = layui.laydate;
+    
+    //常规用法
+    laydate.render({
+      elem: '#csTime'
+    	  ,format: 'yyyy-MM-dd HH:mm'
+    	  ,type:'datetime'
+    	  ,trigger: 'click'
+    });
+    laydate.render({
+      elem: '#ceTime'
+    	  ,format: 'yyyy-MM-dd HH:mm'
+        	  ,type:'datetime'
+    	    ,trigger: 'click'
+    });
+    
+	$("#search").bind("click", function() {
+		searchForm();
+	});
+    
+	$("#clear").bind("click", function() {
+		$("#searchForm").clearForm();
+		searchForm();
+	});
+    
+	$("#export").bind("click", function() {
+
+		var stime = $("#csTime").val();
+		var etime = $("#ceTime").val();
+		var pname = $("#pName").val();
+		var type = $("#type").val();
+		if(stime!=""&&etime!=""){
+			if(stime>etime){
+				layer.msg('日期起始不可大于日期截止！');
+				$("#ceTime").val("");
+				return;
+			}
+		}else{
+			layer.msg('导出前请先选择创建日期！');
+			return;
+		}
+		layer.confirm('确认要导出吗', {icon: 3, title: '导出确认'}, function (index) {
+			window.location="back/pack/exportPack?stime="+stime+
+					"&etime="+etime+"&pname="+pname+"&type="+type;
+		    layer.closeAll();
+		});
+	});
+	
+	layui.form.on('submit(formDemo)', function(data){
+	    layer.msg(JSON.stringify(data.field));
+	    return false;
+  	});
+  
+	table.on('tool(tableFilter)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+		var data = obj.data; //获得当前行数据
+		var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+		if(layEvent === 'changeState'){ //状态变更
+			changeState(data['id'],data['status'],data['weight'],data['amount']);
+		} else if(layEvent === 'setWeightAndAmount'){ //设置重量和金额
+			changeInfo(data['id'],data['status'],data['weight'],data['amount'],data['logistics'],data['logistics_order']);
+		} else if(layEvent === 'delPack'){ //删除订单
+			delPack(data['id']);
+		} else if(layEvent === 'changeType'){ //更改类型
+			changeType(data['id'],data['pack_type']);
+		}
+	});
+});
+  function changeType(id,type){
+		$("#typeid").val(id);
+		$("#type2").val(type);
+		var width = window.innerWidth*1/2+"px";
+		var height = window.innerHeight*1/2+"px";
+		  //layedit.setContent(fuwenben, "", false); 这个初始化就相当于清空了
+	layer.open({
+		  type:1,
+		  area: [width,height],
+		   title: "类型变更"
+		   ,content: $("#typeInfo"),
+		   shade: 0.3,
+		   resize:false ,
+		   move: false,
+		   scrollbar: true,
+		   btn: ['提交', '重置']
+		   ,btn1: function(index, layero){
+			   doChangeType(id,$("#type2").val());
+		   },
+		   btn2: function(index, layero){
+				$("#type2").val(type);
+			   return false;
+		   },
+		 cancel: function(layero,index){ 
+		    layer.closeAll();
+		   }
+		 }); 
+	$("#type2").next("div").children("div").children("input").val(type);
+	$("#type2").next("div").children("div").children("input").attr("placeholder",type);
+	}
+  
+  function delPack(id){
+	  layer.confirm('确认要删除这条记录吗？', {icon: 3, title:'信息删除确认'}, function(index){
+			doDel(id);
+		});
+  }
+  function doDel(id){
+	  $.ajax({
+			type : "post",
+			url : "back/pack/delPack",
+			data : JSON.stringify({"id":id}),
+			headers : {
+	            'Content-Type' : 'application/json;charset=utf-8'
+	            },
+			dataType : 'json',
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				console.log(XMLHttpRequest.status + "," + XMLHttpRequest.readyState + ","
+						+ textStatus + "," + errorThrown);			
+			},
+			success : function(result) {
+				if(result["status"] == 1){
+					layer.msg(result["msg"]);
+					searchForm();
+				}
+			}
+		});
+  }
+
+  var statuses = ['待添加','待称重','待付款','已付款','运输中','已完成'];
+  function changeState(id,status,weight,amount){
+		$("#stateid").val(id);
+		$("#state").val(status);
+		var width = window.innerWidth*1/2+"px";
+		var height = window.innerHeight*1/2+"px";
+		  //layedit.setContent(fuwenben, "", false); 这个初始化就相当于清空了
+	layer.open({
+		  type:1,
+		  area: [width,height],
+		   title: "状态变更"
+		   ,content: $("#stateInfo"),
+		   shade: 0.3,
+		   resize:false ,
+		   move: false,
+		   scrollbar: true,
+		   btn: ['提交', '重置']
+		   ,btn1: function(index, layero){
+			   doChange(id,$("#state").val());
+		   },
+		   btn2: function(index, layero){
+				$("#state").val(status);
+			   return false;
+		   },
+		 cancel: function(layero,index){ 
+		    layer.closeAll();
+		   }
+		 }); 
+	var stateSel = $("#state").next("div").children("div").children("input");
+	console.log(stateSel.attr("placeholder"));
+	console.log(stateSel.val());
+	stateSel.val(statuses[status]);
+	
+	}
+  /*
+function changeState(id,status,weight,amount){
+	if(status!=0 && status!=2 && status!=1 && status !=5){
+		layer.confirm('确认要将状态由'+statuses[status]+'变更为'+statuses[status+1]+'吗？', {icon: 3, title:'信息删除确认'}, function(index){
+			doChange(id,status+1);
+		});
+	}else if(status == 1){
+		//console.log(weight+":::::"+amount);
+		if(!weight>0 || !amount>0){
+			layer.msg("请先设置包裹重量及金额，再进行状态变更！");
+		}else{
+			layer.confirm('确认要将状态由'+statuses[status]+'变更为'+statuses[status+1]+'吗？', {icon: 3, title:'信息删除确认'}, function(index){
+				doChange(id,status+1);
+			});
+		}
+	}else{
+		layer.msg("包裹为"+statuses[status]+"状态，管理员不可变更！");
+	}
+} */
+
+function doChange(id,status){
+	$.ajax({
+		type : "post",
+		url : "back/pack/updatePack",
+		data : JSON.stringify({"id":id,"status":status}),
+		headers : {
+            'Content-Type' : 'application/json;charset=utf-8'
+            },
+		dataType : 'json',
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(XMLHttpRequest.status + "," + XMLHttpRequest.readyState + ","
+					+ textStatus + "," + errorThrown);			
+		},
+		success : function(result) {
+			if(result["status"] == 1){
+				layer.msg(result["msg"]);
+				searchForm();
+			}
+		    layer.closeAll();
+		}
+	});
+}
+function doChangeType(id,type){
+	$.ajax({
+		type : "post",
+		url : "back/pack/updatePack",
+		data : JSON.stringify({"id":id,"type":type}),
+		headers : {
+            'Content-Type' : 'application/json;charset=utf-8'
+            },
+		dataType : 'json',
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(XMLHttpRequest.status + "," + XMLHttpRequest.readyState + ","
+					+ textStatus + "," + errorThrown);			
+		},
+		success : function(result) {
+			if(result["status"] == 1){
+				layer.msg(result["msg"]);
+				searchForm();
+			}
+		    layer.closeAll();
+		}
+	});
+}
+
+function changeInfo(id,status,weight,amount,logistics,logistics_order){
+	$("#id").val(id);
+	$("#weight").val(weight);
+	$("#amount").val(amount);
+	$("#logistics").val(logistics);
+	$("#logistics_order").val(logistics_order);
+	
+	var width = window.innerWidth*1/2+"px";
+	  //layedit.setContent(fuwenben, "", false); 这个初始化就相当于清空了
+layer.open({
+	  type:1,
+	  area: width,
+	   title: "设置包裹总重量、总金额、物流公司、物流单号"
+	   ,content: $("#packInfo"),
+	   shade: 0.3,
+	   resize:false ,
+	   move: false,
+	   scrollbar: true,
+	   btn: ['提交', '重置']
+	   ,btn1: function(index, layero){
+		   doChange2();
+	   },
+	   btn2: function(index, layero){
+			$("#weight").val(weight);
+			$("#amount").val(amount);
+			$("#logistics").val(logistics);
+			$("#logistics_order").val(logistics_order);
+		   return false;
+	   },
+	 cancel: function(layero,index){ 
+	    layer.closeAll();
+	   }
+	 }); 
+}
+
+
+function doChange2(){
+	var id = $("#id").val();
+	var weight = $("#weight").val();
+	var amount = $("#amount").val();
+	var logistics = $("#logistics").val();
+	var logistics_order = $("#logistics_order").val();
+	$.ajax({
+		type : "post",
+		url : "back/pack/updatePack",
+		data : JSON.stringify({"id":id,"weight":weight,"amount":amount,"logistics":logistics,"logisticsOrder":logistics_order}),
+		headers : {
+            'Content-Type' : 'application/json;charset=utf-8'
+            },
+		dataType : 'json',
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log(XMLHttpRequest.status + "," + XMLHttpRequest.readyState + ","
+					+ textStatus + "," + errorThrown);			
+		},
+		success : function(result) {
+			if(result["status"] == 1){
+				layer.closeAll();
+				layer.msg(result["msg"]);
+				searchForm();
+			}
+		    layer.closeAll();
+		}
+	});
+}
+
+function openCPack(id){
+	var table = layui.table;
+	var width = window.innerWidth*1+"px";
+	  //layedit.setContent(fuwenben, "", false); 这个初始化就相当于清空了
+layer.open({
+	  type:1,
+	  area: width,
+	   title: "子包裹列表"
+	   ,content: $("#cpackdiv"),
+	   shade: 0.3,
+	   resize:false ,
+	   move: false,
+	   scrollbar: true,
+	 cancel: function(layero,index){ 
+	    layer.closeAll();
+	   }
+	 }); 
+	
+	table.render({
+	      elem: '#cpackTable'
+	      ,url: 'back/pack/getCPackList'
+	      ,method: 'post'
+	      ,contentType: 'application/json'
+	      ,id:'cpackTable'
+	   	  ,parseData: function(res){ //res 即为原始返回的数据
+	   		    return {
+	   		      "code": res.status, //解析接口状态
+	   		      "msg": res.message, //解析提示文本
+	   		   	  "count": res.count, //解析数据长度
+	   		      "data": res.data //解析数据列表
+	   		    };
+	   	  }
+	    ,where: {field: 'create_time', sort: "desc",id:id}
+	    ,response: {
+	        statusCode:1 //规定成功的状态码，默认：0
+	      }
+	      ,page: true //开启分页
+	      ,cols: [
+	          [
+	        //{type:'checkbox'}
+	        //,{title: '序号', type:'numbers', align: 'center'}
+	        ,{field: 'id', hide:true, title:'id', align: 'center'}
+	        ,{width:'15%',field:'deliver', title: '快递公司', align: 'center'}
+	        ,{width:'20%',field:'deliver_number', title: '快递单号', align: 'center'}
+	        ,{width:'15%',field:'goods', title: '商品名称', align: 'center'}
+	        ,{width:'15%',field:'goos_number', title: '商品数量', align: 'center'}
+	        ,{width:'15%',field:'worth', title: '商品价值(元)', align: 'center'}
+	        ,{width:'20%',field:'ctime', title: '创建时间', align: 'center'}
+	        ]
+	      ]
+	    });
+}
+
+function clearInfoForm(){
+	$("#id").val("");
+	$("#packInfo").clearForm();
+}
+
+function searchForm(){
+	layui.use('table', function(){
+		var stime = $("#csTime").val();
+		var etime = $("#ceTime").val();
+		var pname = $("#pName").val();
+		var type = $("#type").val();
+		if(stime!=""&&etime!=""){
+			if(stime>etime){
+				layer.msg('日期起始不可大于日期截止！');
+				$("#ceTime").val("");
+				return;
+			}
+		}
+		var table = layui.table;
+		table.reload('demoTable',{
+			  where: {field: 'create_time', sort: "desc",
+			    	stime:stime,
+			    	etime:etime,pname:pname,type:type}
+			,page: {
+			    curr: 1 //重新从第 1 页开始
+			  }
+			});
+	});
+}
+//让日期插件无法选中 达到禁止手输的目的
+function noInput(dom){
+	$(dom).blur();
+}
+/**
+ * 自动将form表单封装成json对象
+ */
+$.fn.serializeObject = function() {
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name]) {
+            if (!o[this.name].push) {
+                o[this.name] = [ o[this.name] ];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};  
+  </script>
+  <script type="text/html" id="bar">
+  <a class="layui-btn layui-btn-xs" lay-event="changeState" shiro:hasPermission="common:pack:edit">状态变更</a>
+<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="changeType" shiro:hasPermission="common:pack:edit">类型变更</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="setWeightAndAmount" shiro:hasPermission="common:pack:edit">增补信息</a>
+<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delPack" shiro:hasPermission="common:pack:del">删除</a>
+
+</script>
+</body>

@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "wx.lte",
+      "type": "com.fire.back.config.PayConfig",
+      "sourceType": "com.fire.back.config.PayConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "wx.lte.appid",
+      "type": "java.lang.String",
+      "sourceType": "com.fire.back.config.PayConfig"
+    },
+    {
+      "name": "wx.lte.appsecret",
+      "type": "java.lang.String",
+      "sourceType": "com.fire.back.config.PayConfig"
+    },
+    {
+      "name": "wx.lte.mchid",
+      "type": "java.lang.String",
+      "sourceType": "com.fire.back.config.PayConfig"
+    },
+    {
+      "name": "wx.lte.mchkey",
+      "type": "java.lang.String",
+      "sourceType": "com.fire.back.config.PayConfig"
+    }
+  ],
+  "hints": []
+}

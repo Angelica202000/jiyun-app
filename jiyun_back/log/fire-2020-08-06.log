@@ -1,0 +1,894 @@
+2020-08-06 17:41:19.156 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 17220 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 17:41:19.166 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 17:41:19.246 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 17:41:19.246 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 17:41:21.239 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$bd00d770] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:21.887 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:21.907 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:21.907 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:21.941 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2fed6ce8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:21.948 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:22.306 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:cs.dixincs.com.pfx'
+2020-08-06 17:41:22.322 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 17:41:22.337 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:cs.dixincs.com.pfx'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:cs.dixincs.com.pfx'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:92)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:58)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:300)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [cs.dixincs.com.pfx] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:133)
+	... 20 common frames omitted
+2020-08-06 17:41:55.583 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 13732 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 17:41:55.583 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 17:41:55.653 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 17:41:55.653 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 17:41:57.035 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$9b290797] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:57.714 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:57.723 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:57.726 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:57.752 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e159d0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:57.759 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:41:58.026 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+2020-08-06 17:41:58.036 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 17:41:58.036 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:92)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:58)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:300)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [jy.igniting-tec.com.pfx] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:133)
+	... 20 common frames omitted
+2020-08-06 17:42:25.391 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 13120 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 17:42:25.401 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 17:42:25.441 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 17:42:25.441 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 17:42:26.626 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$fe6c78e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.284 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.294 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.296 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.323 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71590e60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.331 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:27.626 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+2020-08-06 17:42:27.632 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 17:42:27.639 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:jy.igniting-tec.com.pfx'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:92)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:58)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:300)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [jy.igniting-tec.com.pfx] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:133)
+	... 20 common frames omitted
+2020-08-06 17:42:53.507 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 5388 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 17:42:53.510 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 17:42:53.563 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 17:42:53.564 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 17:42:54.736 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$686b3db0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.414 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.424 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.424 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.454 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db57d328] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.464 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:42:55.973 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 17:42:55.996 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 17:42:56.007 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 17:42:56.007 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 17:42:56.014 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 17:42:56.173 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 17:42:56.439 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 17:42:57.682 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 17:42:58.826 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 17:42:58.966 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 17:42:59.510 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 17:42:59.528 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 17:42:59.586 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 17:42:59.740 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 17:42:59.749 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 17:42:59.837 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 17:42:59.868 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 17:42:59.869 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 17:42:59.883 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 17:42:59.904 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 17:43:00.187 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 17:43:00.189 [restartedMain] INFO  com.fire.Application-Started Application in 7.067 seconds (JVM running for 8.966)
+2020-08-06 17:44:22.811 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 14084 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 17:44:22.813 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 17:44:22.867 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 17:44:22.867 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 17:44:24.066 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$e4162956] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.725 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.735 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.739 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.767 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5702bece] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.776 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 17:44:24.814 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-08-06 17:44:24.821 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 17:44:24.828 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+2020-08-06 20:17:02.643 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 17200 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:17:02.651 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:17:02.714 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 20:17:02.714 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 20:17:03.834 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$801bb875] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.547 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.557 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.560 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.594 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3084ded] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.603 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:04.642 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-08-06 20:17:04.650 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 20:17:04.657 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+2020-08-06 20:17:29.705 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 3936 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:17:29.708 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:17:29.762 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 20:17:29.762 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 20:17:30.837 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$bda318c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.497 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.505 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.509 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.536 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$308fae3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.545 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:17:31.891 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:17:31.902 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:17:31.913 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:17:31.914 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:17:31.919 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 20:17:32.008 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:17:32.210 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:17:33.372 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 20:17:34.428 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:17:34.530 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:17:34.905 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:17:34.916 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:17:34.945 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:17:35.081 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:17:35.089 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:17:35.175 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:17:35.209 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:17:35.209 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:17:35.226 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:17:35.244 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:17:35.512 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:17:35.514 [restartedMain] INFO  com.fire.Application-Started Application in 6.17 seconds (JVM running for 7.621)
+2020-08-06 20:18:01.710 [https-jsse-nio-8443-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-06 20:19:23.849 [https-jsse-nio-8443-exec-9] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.fire.back.common.FireResult com.fire.back.controller.app.AddressController.getAddressInfo(java.util.Map<java.lang.String, java.lang.Object>)]
+2020-08-06 20:19:23.849 [https-jsse-nio-8443-exec-9] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.fire.back.common.FireResult com.fire.back.controller.app.AddressController.getAddressInfo(java.util.Map<java.lang.String, java.lang.Object>)]
+2020-08-06 20:20:00.252 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 15208 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:20:00.255 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:20:00.302 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 20:20:00.302 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 20:20:01.616 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3919155a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.345 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.356 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.360 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.394 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ac05aad2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.405 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:20:02.865 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:20:02.882 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:20:02.895 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:20:02.895 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:20:02.903 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 20:20:03.069 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:20:03.241 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:20:04.471 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 20:20:05.589 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:20:05.736 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:20:06.302 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:20:06.319 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:20:06.360 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:20:06.534 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:20:06.545 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:20:06.672 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:20:06.739 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:20:06.741 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:20:06.771 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:20:06.801 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:20:07.095 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:20:07.098 [restartedMain] INFO  com.fire.Application-Started Application in 7.185 seconds (JVM running for 10.217)
+2020-08-06 20:20:11.694 [https-jsse-nio-8443-exec-4] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-06 20:29:19.310 [https-jsse-nio-8443-exec-2] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:29:19.310 [https-jsse-nio-8443-exec-2] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:29:46.838 [https-jsse-nio-8443-exec-5] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:29:46.838 [https-jsse-nio-8443-exec-5] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:29:56.703 [https-jsse-nio-8443-exec-4] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:29:56.703 [https-jsse-nio-8443-exec-4] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:30:31.165 [https-jsse-nio-8443-exec-7] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:30:31.165 [https-jsse-nio-8443-exec-7] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:30:32.315 [https-jsse-nio-8443-exec-8] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:30:32.315 [https-jsse-nio-8443-exec-8] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-06 20:38:59.628 [Thread-16] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
+2020-08-06 20:41:28.831 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 15208 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:41:28.831 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:41:29.167 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire.back.dao]' package. Please check your configuration.
+2020-08-06 20:41:29.209 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire]' package. Please check your configuration.
+2020-08-06 20:41:29.530 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:41:29.531 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:41:29.532 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:41:29.559 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:41:29.683 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 20:41:29.754 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2020-08-06 20:41:29.793 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:41:30.732 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} inited
+2020-08-06 20:41:30.779 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+2020-08-06 20:41:30.781 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} closed
+2020-08-06 20:41:30.781 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 20:41:30.782 [restartedMain] INFO  org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2020-08-06 20:41:30.790 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 20:41:30.803 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 24 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:160)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ded9fc02.CGLIB$sqlSessionFactory$2(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ded9fc02$$FastClassBySpringCGLIB$$efadcf43.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ded9fc02.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 38 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 40 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 46 common frames omitted
+2020-08-06 20:41:34.438 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 15208 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:41:34.439 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:41:35.257 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3919155a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.268 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.277 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.278 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.300 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ac05aad2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.304 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:35.601 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:41:35.603 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:41:35.603 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:41:35.626 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:41:35.751 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:41:36.803 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-3} inited
+2020-08-06 20:41:38.111 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:41:38.248 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:41:38.734 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:41:38.736 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:41:38.751 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:41:38.853 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:41:38.859 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:41:38.993 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:41:39.052 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:41:39.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:41:39.071 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:41:39.367 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:41:39.368 [restartedMain] INFO  com.fire.Application-Started Application in 4.975 seconds (JVM running for 1302.487)
+2020-08-06 20:41:39.371 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-08-06 20:41:47.975 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-3} closed
+2020-08-06 20:41:49.228 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 15208 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:41:49.229 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:41:50.026 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$3919155a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.036 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.044 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.044 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.057 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ac05aad2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.060 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:41:50.244 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:41:50.245 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:41:50.245 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:41:50.266 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:41:50.367 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:41:51.336 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-4} inited
+2020-08-06 20:41:52.479 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:41:52.587 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:41:52.953 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:41:52.955 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:41:52.963 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:41:53.028 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:41:53.034 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:41:53.131 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:41:53.173 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:41:53.173 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:41:53.187 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:41:53.422 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:41:53.422 [restartedMain] INFO  com.fire.Application-Started Application in 4.27 seconds (JVM running for 1316.542)
+2020-08-06 20:41:53.425 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-08-06 20:45:34.281 [https-jsse-nio-8443-exec-6] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-06 20:53:27.651 [Thread-45] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-4} closed
+2020-08-06 20:53:33.786 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:53:33.789 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:53:33.843 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 20:53:33.843 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 20:53:35.003 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$fd30bab0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:35.748 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:35.762 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:35.765 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:35.793 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$701d5028] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:35.801 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:36.158 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:53:36.171 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:53:36.182 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:53:36.182 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:53:36.189 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 20:53:36.279 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:53:36.480 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:53:37.648 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 20:53:38.543 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:53:38.653 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:53:39.074 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:53:39.084 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:53:39.119 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:53:39.282 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:53:39.294 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:53:39.411 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:53:39.445 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:53:39.446 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:53:39.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:53:39.484 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 20:53:39.762 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:53:39.765 [restartedMain] INFO  com.fire.Application-Started Application in 6.382 seconds (JVM running for 7.97)
+2020-08-06 20:53:45.862 [Thread-15] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
+2020-08-06 20:53:50.354 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:53:50.354 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:53:50.633 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire.back.dao]' package. Please check your configuration.
+2020-08-06 20:53:50.668 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire]' package. Please check your configuration.
+2020-08-06 20:53:50.894 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:53:50.896 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:53:50.896 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:53:50.925 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:53:51.048 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 20:53:51.101 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2020-08-06 20:53:51.125 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:53:52.024 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} inited
+2020-08-06 20:53:52.072 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+2020-08-06 20:53:52.074 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-2} closed
+2020-08-06 20:53:52.074 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 20:53:52.075 [restartedMain] INFO  org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2020-08-06 20:53:52.081 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 20:53:52.089 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 24 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:160)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158.CGLIB$sqlSessionFactory$1(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158$$FastClassBySpringCGLIB$$31226efd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 38 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 40 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 46 common frames omitted
+2020-08-06 20:53:56.570 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 20:53:56.571 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 20:53:57.053 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$fd30bab0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.060 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.065 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.066 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.083 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$701d5028] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.086 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 20:53:57.227 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 20:53:57.228 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 20:53:57.228 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 20:53:57.249 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 20:53:57.348 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 20:53:58.348 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-3} inited
+2020-08-06 20:53:59.637 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 20:53:59.705 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 20:54:00.877 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 20:54:00.878 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 20:54:00.887 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 20:54:00.946 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 20:54:00.954 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 20:54:01.084 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:54:01.134 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 20:54:01.135 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 20:54:01.155 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 20:54:01.498 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 20:54:01.499 [restartedMain] INFO  com.fire.Application-Started Application in 4.958 seconds (JVM running for 29.704)
+2020-08-06 20:54:01.505 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-08-06 21:04:34.866 [Thread-26] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-3} closed
+2020-08-06 21:04:35.768 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 21:04:35.768 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 21:04:36.246 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$fd30bab0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.253 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.257 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.257 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.267 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$701d5028] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.269 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:04:36.405 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 21:04:36.405 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 21:04:36.405 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 21:04:36.425 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 21:04:36.503 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 21:04:37.458 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-4} inited
+2020-08-06 21:04:38.013 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 21:04:38.067 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 21:04:38.311 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 21:04:38.312 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 21:04:38.316 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 21:04:38.358 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 21:04:38.363 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 21:04:38.424 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:04:38.452 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:04:38.452 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 21:04:38.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 21:04:38.664 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 21:04:38.664 [restartedMain] INFO  com.fire.Application-Started Application in 2.928 seconds (JVM running for 666.869)
+2020-08-06 21:04:38.666 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-08-06 21:04:54.207 [Thread-38] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-4} closed
+2020-08-06 21:06:30.865 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 21:06:30.866 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 21:06:31.110 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire.back.dao]' package. Please check your configuration.
+2020-08-06 21:06:31.129 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner-No MyBatis mapper was found in '[com.fire]' package. Please check your configuration.
+2020-08-06 21:06:31.302 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 21:06:31.303 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 21:06:31.304 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 21:06:31.329 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-3].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 21:06:31.446 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 21:06:31.516 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2020-08-06 21:06:31.546 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 21:06:32.459 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-5} inited
+2020-08-06 21:06:32.495 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+2020-08-06 21:06:32.497 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-5} closed
+2020-08-06 21:06:32.497 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 21:06:32.498 [restartedMain] INFO  org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2020-08-06 21:06:32.505 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 21:06:32.506 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 24 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:160)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158.CGLIB$sqlSessionFactory$1(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158$$FastClassBySpringCGLIB$$31226efd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2f1a158.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\jiyun_workspace\jiyun_back\target\classes\mapper\AddressTbMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 38 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 40 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.fire.back.entity.AddressTb'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.fire.back.entity.AddressTb
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 46 common frames omitted
+2020-08-06 21:06:38.546 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 19436 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 21:06:38.547 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 21:06:39.166 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$fd30bab0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.173 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.179 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.180 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.200 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$701d5028] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.204 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:06:39.416 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 21:06:39.417 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 21:06:39.417 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 21:06:39.440 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-4].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 21:06:39.526 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 21:06:40.546 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-6} inited
+2020-08-06 21:06:41.778 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 21:06:41.840 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 21:06:42.090 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 21:06:42.092 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 21:06:42.097 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 21:06:42.137 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 21:06:42.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 21:06:42.206 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:06:42.234 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:06:42.234 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 21:06:42.245 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 21:06:42.473 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 21:06:42.473 [restartedMain] INFO  com.fire.Application-Started Application in 3.952 seconds (JVM running for 790.678)
+2020-08-06 21:06:42.476 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2020-08-06 21:23:46.400 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 18004 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 21:23:46.402 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 21:23:46.455 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 21:23:46.455 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 21:23:47.771 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$9055acb1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.530 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.543 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.546 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.576 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3424229] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.585 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 21:23:48.949 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 21:23:48.960 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 21:23:48.971 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 21:23:48.972 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 21:23:48.977 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 21:23:49.056 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 21:23:49.260 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 21:23:50.415 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 21:23:51.217 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 21:23:51.329 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 21:23:51.701 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 21:23:51.712 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 21:23:51.743 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 21:23:51.879 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 21:23:51.888 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 21:23:51.986 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:23:52.022 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 21:23:52.023 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 21:23:52.041 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 21:23:52.061 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 21:23:52.348 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 21:23:52.350 [restartedMain] INFO  com.fire.Application-Started Application in 6.364 seconds (JVM running for 8.019)
+2020-08-06 21:23:57.766 [https-jsse-nio-8443-exec-9] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-06 22:35:35.081 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 16228 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 22:35:35.097 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 22:35:35.151 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 22:35:35.151 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 22:35:36.236 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$41b5ebe2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:36.906 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:36.916 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:36.921 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:36.951 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b4a2815a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:36.958 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 22:35:37.334 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8443 (https)
+2020-08-06 22:35:37.345 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 22:35:37.354 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-06 22:35:37.354 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-06 22:35:37.359 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-06 22:35:37.440 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-06 22:35:37.629 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-06 22:35:38.821 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-06 22:35:39.604 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-06 22:35:39.711 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-06 22:35:40.122 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-06 22:35:40.133 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-06 22:35:40.168 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-06 22:35:40.299 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-06 22:35:40.307 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-06 22:35:40.408 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 22:35:40.450 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-06 22:35:40.451 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-06 22:35:40.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-06 22:35:40.488 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-8443"]
+2020-08-06 22:35:40.784 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8443 (https) with context path ''
+2020-08-06 22:35:40.787 [restartedMain] INFO  com.fire.Application-Started Application in 6.053 seconds (JVM running for 7.693)
+2020-08-06 22:35:53.691 [https-jsse-nio-8443-exec-7] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-06 23:41:31.790 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 15324 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 23:41:31.793 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 23:41:31.850 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 23:41:31.850 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 23:41:32.983 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$4541a045] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.665 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.680 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.686 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.723 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b82e35bd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.733 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:41:33.774 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-08-06 23:41:33.783 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 23:41:33.791 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted
+2020-08-06 23:57:12.539 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 16152 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-06 23:57:12.542 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-06 23:57:12.602 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-06 23:57:12.602 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-06 23:57:13.746 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$65acffb7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.383 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.393 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.396 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.422 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d899952f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.429 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-06 23:57:14.462 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-08-06 23:57:14.468 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-06 23:57:14.475 [restartedMain] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.fire.Application.main(Application.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 13 common frames omitted

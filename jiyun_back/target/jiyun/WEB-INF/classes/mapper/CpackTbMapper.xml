@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fire.back.dao.CpackTbMapper">
+  <resultMap id="BaseResultMap" type="com.fire.back.entity.CpackTb">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="pack_id" jdbcType="BIGINT" property="packId" />
+    <result column="deliver" jdbcType="VARCHAR" property="deliver" />
+    <result column="deliver_number" jdbcType="VARCHAR" property="deliverNumber" />
+    <result column="goods" jdbcType="VARCHAR" property="goods" />
+    <result column="goos_number" jdbcType="VARCHAR" property="goosNumber" />
+    <result column="worth" jdbcType="VARCHAR" property="worth" />
+    <result column="buy_url" jdbcType="VARCHAR" property="buyUrl" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, pack_id, deliver, deliver_number, goods, goos_number, worth, buy_url, is_delete, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.fire.back.entity.CpackTbExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from cpack_tb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cpack_tb
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cpack_tb
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.fire.back.entity.CpackTb">
+    insert into cpack_tb (id, pack_id, deliver, 
+      deliver_number, goods, goos_number, 
+      worth, buy_url, is_delete, 
+      create_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{packId,jdbcType=BIGINT}, #{deliver,jdbcType=VARCHAR}, 
+      #{deliverNumber,jdbcType=VARCHAR}, #{goods,jdbcType=VARCHAR}, #{goosNumber,jdbcType=VARCHAR}, 
+      #{worth,jdbcType=VARCHAR}, #{buyUrl,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fire.back.entity.CpackTb">
+    insert into cpack_tb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="packId != null">
+        pack_id,
+      </if>
+      <if test="deliver != null">
+        deliver,
+      </if>
+      <if test="deliverNumber != null">
+        deliver_number,
+      </if>
+      <if test="goods != null">
+        goods,
+      </if>
+      <if test="goosNumber != null">
+        goos_number,
+      </if>
+      <if test="worth != null">
+        worth,
+      </if>
+      <if test="buyUrl != null">
+        buy_url,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="packId != null">
+        #{packId,jdbcType=BIGINT},
+      </if>
+      <if test="deliver != null">
+        #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverNumber != null">
+        #{deliverNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null">
+        #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="goosNumber != null">
+        #{goosNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="worth != null">
+        #{worth,jdbcType=VARCHAR},
+      </if>
+      <if test="buyUrl != null">
+        #{buyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fire.back.entity.CpackTbExample" resultType="java.lang.Long">
+    select count(*) from cpack_tb
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update cpack_tb
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.packId != null">
+        pack_id = #{record.packId,jdbcType=BIGINT},
+      </if>
+      <if test="record.deliver != null">
+        deliver = #{record.deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliverNumber != null">
+        deliver_number = #{record.deliverNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods != null">
+        goods = #{record.goods,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goosNumber != null">
+        goos_number = #{record.goosNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.worth != null">
+        worth = #{record.worth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyUrl != null">
+        buy_url = #{record.buyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        is_delete = #{record.isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update cpack_tb
+    set id = #{record.id,jdbcType=BIGINT},
+      pack_id = #{record.packId,jdbcType=BIGINT},
+      deliver = #{record.deliver,jdbcType=VARCHAR},
+      deliver_number = #{record.deliverNumber,jdbcType=VARCHAR},
+      goods = #{record.goods,jdbcType=VARCHAR},
+      goos_number = #{record.goosNumber,jdbcType=VARCHAR},
+      worth = #{record.worth,jdbcType=VARCHAR},
+      buy_url = #{record.buyUrl,jdbcType=VARCHAR},
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fire.back.entity.CpackTb">
+    update cpack_tb
+    <set>
+      <if test="packId != null">
+        pack_id = #{packId,jdbcType=BIGINT},
+      </if>
+      <if test="deliver != null">
+        deliver = #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverNumber != null">
+        deliver_number = #{deliverNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null">
+        goods = #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="goosNumber != null">
+        goos_number = #{goosNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="worth != null">
+        worth = #{worth,jdbcType=VARCHAR},
+      </if>
+      <if test="buyUrl != null">
+        buy_url = #{buyUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fire.back.entity.CpackTb">
+    update cpack_tb
+    set pack_id = #{packId,jdbcType=BIGINT},
+      deliver = #{deliver,jdbcType=VARCHAR},
+      deliver_number = #{deliverNumber,jdbcType=VARCHAR},
+      goods = #{goods,jdbcType=VARCHAR},
+      goos_number = #{goosNumber,jdbcType=VARCHAR},
+      worth = #{worth,jdbcType=VARCHAR},
+      buy_url = #{buyUrl,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,143 @@
+2020-08-15 14:09:07.907 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 8668 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-15 14:09:07.910 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-15 14:09:08.007 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-15 14:09:08.008 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-15 14:09:09.948 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$a983dc51] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:10.722 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:10.738 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:10.743 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:10.781 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1c7071c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:10.792 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:09:11.335 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 443 (https)
+2020-08-15 14:09:11.354 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-443"]
+2020-08-15 14:09:11.366 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-15 14:09:11.367 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-15 14:09:11.374 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-15 14:09:11.627 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-15 14:09:11.828 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-15 14:09:13.128 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-15 14:09:14.328 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-15 14:09:14.508 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-15 14:09:15.078 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-15 14:09:15.098 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-15 14:09:15.149 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-15 14:09:15.339 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-15 14:09:15.358 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-15 14:09:15.468 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-15 14:09:15.508 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-15 14:09:15.508 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-15 14:09:15.529 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-15 14:09:15.548 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-443"]
+2020-08-15 14:09:15.878 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 443 (https) with context path ''
+2020-08-15 14:09:15.878 [restartedMain] INFO  com.fire.Application-Started Application in 8.55 seconds (JVM running for 12.012)
+2020-08-15 14:10:20.062 [https-jsse-nio-443-exec-6] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-15 14:11:06.755 [https-jsse-nio-443-exec-7] ERROR com.fire.back.controller.web.BackPackController-导出失败
+java.lang.NullPointerException: null
+	at com.fire.back.service.impl.PackServiceImpl.exportExcel(PackServiceImpl.java:223)
+	at com.fire.back.controller.web.BackPackController.exportPack(BackPackController.java:124)
+	at com.fire.back.controller.web.BackPackController$$FastClassBySpringCGLIB$$4075d96c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.apache.shiro.spring.security.interceptor.AopAllianceAnnotationsAuthorizingMethodInterceptor$1.proceed(AopAllianceAnnotationsAuthorizingMethodInterceptor.java:82)
+	at org.apache.shiro.authz.aop.AuthorizingMethodInterceptor.invoke(AuthorizingMethodInterceptor.java:39)
+	at org.apache.shiro.spring.security.interceptor.AopAllianceAnnotationsAuthorizingMethodInterceptor.invoke(AopAllianceAnnotationsAuthorizingMethodInterceptor.java:115)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.fire.back.controller.web.BackPackController$$EnhancerBySpringCGLIB$$1d76af2e.exportPack(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.fire.MyFilter.doFilter(MyFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-15 14:41:02.966 [Thread-27] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
+2020-08-15 14:42:36.638 [restartedMain] INFO  com.fire.Application-Starting Application on DESKTOP-8D4RPUO with PID 3316 (E:\jiyun_workspace\jiyun_back\target\classes started by qdupr in E:\jiyun_workspace\jiyun_back)
+2020-08-15 14:42:36.648 [restartedMain] INFO  com.fire.Application-No active profile set, falling back to default profiles: default
+2020-08-15 14:42:36.698 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-15 14:42:36.698 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-15 14:42:37.860 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'shiroConfig' of type [com.fire.back.config.ShiroConfig$$EnhancerBySpringCGLIB$$2fa6e5d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.528 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.538 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'myShiroRealm' of type [com.fire.back.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.538 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.568 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a2937b4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.568 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-15 14:42:38.898 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 443 (https)
+2020-08-15 14:42:38.908 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["https-jsse-nio-443"]
+2020-08-15 14:42:38.918 [restartedMain] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2020-08-15 14:42:38.918 [restartedMain] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-08-15 14:42:38.928 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener-The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\OpenSSL-Win64\bin;C:\Users\qdupr\AppData\Local\Microsoft\WindowsApps;;D:\software\Microsoft VS Code\bin;.]
+2020-08-15 14:42:39.008 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2020-08-15 14:42:39.178 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure-Init DruidDataSource
+2020-08-15 14:42:40.378 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2020-08-15 14:42:41.205 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping-Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-08-15 14:42:41.318 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2020-08-15 14:42:41.669 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Context refreshed
+2020-08-15 14:42:41.679 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper-Found 1 custom documentation plugin(s)
+2020-08-15 14:42:41.709 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner-Scanning for api listing references
+2020-08-15 14:42:41.849 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getListUsingPOST_1
+2020-08-15 14:42:41.859 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getAddressListUsingPOST_1
+2020-08-15 14:42:41.939 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-15 14:42:41.969 [restartedMain] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader-Trying to infer dataType org.springframework.ui.ModelMap
+2020-08-15 14:42:41.969 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: indexUsingGET_1
+2020-08-15 14:42:41.989 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator-Generating unique operation named: getUserInfoUsingPOST_1
+2020-08-15 14:42:42.009 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["https-jsse-nio-443"]
+2020-08-15 14:42:42.249 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 443 (https) with context path ''
+2020-08-15 14:42:42.259 [restartedMain] INFO  com.fire.Application-Started Application in 6.011 seconds (JVM running for 7.519)
+2020-08-15 14:42:45.903 [https-jsse-nio-443-exec-8] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'

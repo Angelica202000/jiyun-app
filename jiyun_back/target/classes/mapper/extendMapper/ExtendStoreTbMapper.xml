@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fire.back.dao.extend.ExtendStoreTbMapper" >
+ 
+ <select id="del" resultType="Map" parameterType="map" >
+ 	update store_tb set is_delete=1 where id in (
+ 	${ids} )
+ </select>
+ <select id="getListByPage" resultType="Map" parameterType="map" >
+ 	select a.*,
+	from_unixtime(a.create_time,'%Y-%m-%d %H:%i:%S') ctime,
+	from_unixtime(a.update_time,'%Y-%m-%d %H:%i:%S') utime 
+	from store_tb a 
+	 ${param}
+ </select>
+ <select id="getListByPageCount" resultType="Integer" parameterType="map" >
+ 	select count(*) count 
+	from store_tb a  ${param}
+ </select>
+ <select id="getBackInfoById" resultType="Map" parameterType="map" >
+ 	select a.*,
+	from_unixtime(a.create_time,'%Y-%m-%d %H:%i:%S') ctime,
+	from_unixtime(a.update_time,'%Y-%m-%d %H:%i:%S') utime 
+	from store_tb a 
+	where a.id=#{id,jdbcType=BIGINT}
+ </select>
+</mapper>

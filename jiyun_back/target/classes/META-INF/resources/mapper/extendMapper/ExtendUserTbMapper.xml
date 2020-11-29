@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fire.back.dao.extend.ExtendUserTbMapper">
+  <resultMap id="BaseResultMap" type="com.fire.back.entity.UserTb">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="id_card_number" jdbcType="VARCHAR" property="idCardNumber" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <select id="selectUsersByPage" resultMap="BaseResultMap" parameterType="com.fire.back.entity.UserTb">
+    select
+    <include refid="Base_Column_List" />
+    from user_tb
+    <where>
+      <if test="nickName != null" >
+        nick_name like "%"#{nickName,jdbcType=VARCHAR}"%"
+      </if>
+      <if test="startTime != null" >
+        and create_time >= unix_timestamp(#{startTime,jdbcType=TIMESTAMP})
+      </if>
+      <if test="endTime != null" >
+        and create_time &lt;= unix_timestamp(#{endTime,jdbcType=TIMESTAMP})
+      </if>
+    </where>
+    order by update_time desc
+    limit #{offSet} , #{limit}
+  </select>
+  <select id="selectUsersCount" resultType="Integer" parameterType="com.fire.back.entity.UserTb">
+    select
+        count(*)
+    from user_tb
+    <where>
+      <if test="nickName != null" >
+        nick_name like "%"#{nickName,jdbcType=VARCHAR}"%"
+      </if>
+      <if test="startTime != null" >
+        and FROM_UNIXTIME(create_time) >= #{startTime}
+      </if>
+      <if test="endTime != null" >
+        and FROM_UNIXTIME(create_time) &lt;= #{endTime}
+      </if>
+    </where>
+  </select>
+  <sql id="Base_Column_List">
+    id, nick_name, open_id, real_name, id_card_number, mobile, gender, is_delete, create_time, 
+    update_time
+  </sql>
+</mapper>

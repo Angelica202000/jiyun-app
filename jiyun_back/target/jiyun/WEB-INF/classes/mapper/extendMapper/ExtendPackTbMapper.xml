@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fire.back.dao.extend.ExtendPackTbMapper" >
+ 
+ <select id="getListByPage" resultType="Map" parameterType="map" >
+ 	select a.*,
+	from_unixtime(a.create_time,'%Y-%m-%d %H:%i:%S') ctime,
+	from_unixtime(a.update_time,'%Y-%m-%d %H:%i:%S') utime,
+	ifnull(cp.cpcount,0) cpcount,u.nick_name uname 
+	from pack_tb a 
+	left join (
+	select pack_id,count(*) cpcount from cpack_tb  
+	where is_delete=0 group by pack_id
+	) cp on a.id=cp.pack_id 
+	left join user_tb u on a.user_id=u.id
+	 ${param}
+ </select>
+ <select id="getListByPageCount" resultType="Integer" parameterType="map" >
+ 	select count(*) count 
+	from pack_tb a  ${param}
+ </select>
+ 
+ <select id="getCPackListByPage" resultType="Map" parameterType="map" >
+ 	select a.*,
+	from_unixtime(a.create_time,'%Y-%m-%d %H:%i:%S') ctime
+	from cpack_tb a 
+	 ${param}
+ </select>
+ <select id="getCPackListByPageCount" resultType="Integer" parameterType="map" >
+ 	select count(*) count 
+	from cpack_tb a  ${param}
+ </select>
+ <select id="getExportList" resultType="Map" parameterType="map" >
+	select a.*,c.* 
+	from cpack_tb c join pack_tb a on c.pack_id=a.id 
+	${param}
+ </select>
+</mapper>
